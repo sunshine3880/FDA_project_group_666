@@ -1,1 +1,1 @@
-## This is挺好 the R code for FDA.
+## This is the R code for FDA.
