@@ -1,9 +1,7 @@
 ## This is the R code for FDA.
 > library(readxl)
-Warning message:
-程辑包‘readxl’是用R版本3.1.3 来建造的 
 > data <- read_excel("~/qq/data.xlsx")
-> hpi=data$v4; mort=data$v5
+> hpi=data$v4; mort=data$V5
 > plot(hpi,type='l')   ## Indicates strong serial correlations (unit root)
 > acf(hpi)
 > acf(diff(hpi))
@@ -23,8 +21,8 @@ sample estimates:
 mean of x 
   0.31804 
 
-> m1=arima(hpi,order=c(12,1,0))
-> m1
+> m2=arima(hpi,order=c(12,1,0))
+> m2
 
 Call:
 arima(x = hpi, order = c(12, 1, 0))
@@ -38,3 +36,19 @@ s.e.  0.0434   0.0687   0.0696  0.0710   0.0725   0.0725  0.0724  0.0729   0.071
 s.e.  0.0698  0.0689   0.0436
 
 sigma^2 estimated as 0.04963:  log likelihood = 38.27,  aic = -50.54
+> tsdiag(m2,gof=24)
+> m3=arima(hpi,order = c(0,1,12))
+> m3
+
+Call:
+arima(x = hpi, order = c(0, 1, 12))
+
+Coefficients:
+         ma1     ma2     ma3     ma4      ma5      ma6      ma7     ma8
+      1.4624  1.5468  0.9097  0.2230  -0.3856  -0.5987  -0.2677  0.4097
+s.e.  0.0463  0.0829  0.1111  0.1327   0.1348   0.1105   0.0828  0.0745
+         ma9    ma10    ma11    ma12
+      0.9889  1.0300  0.6967  0.3537
+s.e.  0.1083  0.1326  0.0939  0.0439
+
+sigma^2 estimated as 0.06846:  log likelihood = -42.29,  aic = 110.58
