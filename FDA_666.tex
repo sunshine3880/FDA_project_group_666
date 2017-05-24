@@ -38,7 +38,7 @@ We are considering the lending rate in that the central government execute the m
 The common sense makes it possible that the influence of the leading rate on the housing price is undeniable, but we still curious about the range of this effect.
 
 In our analysis of the relationship between the housing price and lending rate, the Autoregressive (AR) model fits the data by the order 12. 
-Although this recognizable 12 provides no evidence to quarrel with, the Autoregressive Integrated Moving Average (ARIMA) Model illustrates the connection by more explanatory variables，especially the one from the error term in AR model.
+Although this recognizable 12 provides no evidence to quarrel with, the Autoregressive Integrated Moving Average (ARIMA) Model illustrates the connection by more explanatory variables, especially the one from the error term in AR model.
 Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is used, but it does not yield the significance contribution on data fitting.
 
 +conlcusion
@@ -47,8 +47,9 @@ Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is
 
 \section{Data}
 The data we choose are US National Housing Price Index with a base of 100 in 1975 and 30-Year Conventional Mortgage Rate(DISCONTINUED). 
-We download the two data from the website ``FRE'' which is free. Both of the two data are monthly recorded and not seasonly adjusted. 
-We use monthly-based data mainly because two reasion: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARMA model and that is also why we choose the data which is mot seasonal adjusted.
+We download the two data from the website ``FRED'' which is free. 
+Both of the two data are monthly recorded and not seasonly adjusted. 
+We use monthly-based data mainly because two reasion: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
          
 \section{Model Specification}
 \subsection{Autoregressive model}
@@ -73,7 +74,7 @@ Second, if we look at the basic autoregressive conditional heteroskedasticity (A
 The assumption of the time series data is serially uncorrelated but they are dependent, this time variant data is split into a stochastic piece which is a strong white noise and a time-dependent standard deviation.
 And in the GARCH ($p,q$) model, $p$ indicates the order of $\sigma^2$, $q$ indicates the order of the stochastic series.
 One thing needs to mention is that the model is highly relevant in volatility modeling, which means the GARCH model is the best method to test the volatility, for now.
-The tail distribution of GARCH is heavier than normal, but it is still provides a simple parametric function that can be used to describe the volatility evolution. 
+The tail distribution of GARCH is heavier than normal, but it still provides a simple parametric function that can be used to describe the volatility evolution. 
 
 
 \section{Empirical Results}
