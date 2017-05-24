@@ -53,8 +53,34 @@ s.e.  0.1083  0.1326  0.0939  0.0439
 
 sigma^2 estimated as 0.06846:  log likelihood = -42.29,  aic = 110.58
 
+> tsdhpi=ts(diff(hpi))
+> auto.arima(tsdhpi)
+Series: tsdhpi 
+ARIMA(5,0,4) with non-zero mean 
 
-## above results are not as good as the ARIMA(12,1,0) model.
+Coefficients:
+          ar1      ar2     ar3      ar4      ar5     ma1     ma2     ma3
+      -0.2278  -0.0519  0.6993  -0.0264  -0.1985  1.7173  2.1132  1.1465
+s.e.   0.1003   0.0833  0.0668   0.0861   0.0776  0.0979  0.1577  0.1502
+         ma4    mean
+      0.4051  0.3143
+s.e.  0.0818  0.0919
+
+sigma^2 estimated as 0.06933:  log likelihood=-39.09
+AIC=100.18   AICc=100.72   BIC=146.54
+> m4=arima(diff(hpi),order = c(5,1,4))
+> m4
+Call:
+arima(x = diff(hpi), order = c(5, 1, 4))
+
+Coefficients:
+         ar1      ar2     ar3     ar4      ar5      ma1     ma2      ma3     ma4
+      2.0027  -1.7935  0.4468  0.3302  -0.3657  -1.8412  1.4208  -0.3985  0.0372
+s.e.  2.9372   7.2176  7.7010  3.9729   1.0550   3.1819  7.1913   6.1580  1.8354
+
+sigma^2 estimated as 0.04959:  log likelihood = 39.46,  aic = -58.93
+
+## above results are not as good as the ARIMA(5,1,4) model.
 acf(hpi)
 acf(mort)
 plot(mort,type='l') ## Indicates strong serial correlations (unit root)  
