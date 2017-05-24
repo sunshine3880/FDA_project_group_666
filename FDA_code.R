@@ -3,6 +3,14 @@
 > library(timeDate)
 > library(timeSeries)
 > data <- read_excel("~/qq/data.xlsx")
+> head(data)
+    v1 v2 v3    v4   v5
+1 1975  1  1 25.25 9.43
+2 1975  2  1 25.29 9.11
+3 1975  3  1 25.36 8.90
+4 1975  4  1 25.40 8.82
+5 1975  5  1 25.48 8.91
+6 1975  6  1 25.46 8.89
 > hpi=data$v4; mort=data$V5
 > plot(hpi,type='l')  
 > acf(hpi)   ## Indicates strong serial correlations (unit root)
