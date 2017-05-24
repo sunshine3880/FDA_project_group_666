@@ -63,6 +63,12 @@ In the model specification, R program helps us with the order that has significa
 + formula 
 
 \subsection{Autoregressive Integrated Moving Average model}
+An autoregressive integrated moving average (ARIMA) model provide a parsimonious description of stochastic process. 
+The AR part is regressed on its own lagged, the (moving average) MA part is a linear combination of lagged error term occurring contemporaneously, the I part illustrates the difference of the value and their previous value. 
+One leading transmutation of ARIMA cut down the burdensome variables used in AR model and MA models, but it still adequate to simulate the data with dynamic structure in our analysis.
+With the spurn of high order model, some insignificant terms can be removed, the number of parameters used is sharply reduced, and the structure of the estimating model becomes parsimony.
+Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price.
+
 \subsection{General Autoregressive conditional heteroskedasticity model}
 
 
