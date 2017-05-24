@@ -1,19 +1,22 @@
 ## This is the R code for FDA.
 > library(readxl)
+> library(timeDate)
+> library(timeSeries)
 > data <- read_excel("~/qq/data.xlsx")
 > hpi=data$v4; mort=data$V5
 > plot(hpi,type='l')  
 > acf(hpi)   ## Indicates strong serial correlations (unit root)
-> acf(diff(hpi))
-> m1=ar(diff(hpi),method="mle")
+> dhpi=diff(hpi)  ## Working on differenced data 
+> acf(dhpi)
+> m1=ar(dhpi,method="mle")
 > m1$order
 [1] 12
-> t.test(diff(hpi))
+> t.test(dhpi)
 
 	One Sample t-test
 
-data:  diff(hpi)
-t = 8.6791, df = 499, p-value < 2.2e-16   ## not significant
+data:  dhpi
+t = 8.6791, df = 499, p-value < 2.2e-16
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  0.2460435 0.3900365
@@ -53,7 +56,7 @@ s.e.  0.1083  0.1326  0.0939  0.0439
 
 sigma^2 estimated as 0.06846:  log likelihood = -42.29,  aic = 110.58
 
-> tsdhpi=ts(diff(hpi))
+> tsdhpi=ts(dhpi)
 > auto.arima(tsdhpi)
 Series: tsdhpi 
 ARIMA(5,0,4) with non-zero mean 
@@ -68,10 +71,10 @@ s.e.  0.0818  0.0919
 
 sigma^2 estimated as 0.06933:  log likelihood=-39.09
 AIC=100.18   AICc=100.72   BIC=146.54
-> m4=arima(diff(hpi),order = c(5,1,4))
+> m4=arima(dhpi,order = c(5,1,4))
 > m4
 Call:
-arima(x = diff(hpi), order = c(5, 1, 4))
+arima(x = dhpi, order = c(5, 1, 4))
 
 Coefficients:
          ar1      ar2     ar3     ar4      ar5      ma1     ma2      ma3     ma4
@@ -81,25 +84,9 @@ s.e.  2.9372   7.2176  7.7010  3.9729   1.0550   3.1819  7.1913   6.1580  1.8354
 sigma^2 estimated as 0.04959:  log likelihood = 39.46,  aic = -58.93
 
 ## above results are not as good as the ARIMA(5,1,4) model.
-acf(hpi)
+
 acf(mort)
 plot(mort,type='l') ## Indicates strong serial correlations (unit root)  
-dhpi=diff(hpi)  ## Working on differenced data 
-acf(dhpi)
-> m4
-
-Call:
-arima(x = dhpi, order = c(12, 0, 0), include.mean = F)
-
-Coefficients:
-         ar1      ar2      ar3     ar4      ar5      ar6     ar7     ar8      ar9
-      1.2343  -0.2827  -0.3300  0.3316  -0.0762  -0.1727  0.1563  0.0020  -0.0972
-s.e.  0.0434   0.0687   0.0696  0.0710   0.0725   0.0725  0.0724  0.0729   0.0713
-        ar10    ar11     ar12
-      0.1159  0.3202  -0.2325
-s.e.  0.0698  0.0689   0.0436
-
-sigma^2 estimated as 0.04963:  log likelihood = 38.27,  aic = -50.54
 
 > dmort=diff(mort)
 > length(dmort)
