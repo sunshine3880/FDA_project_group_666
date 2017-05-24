@@ -1,3 +1,12 @@
-# demo_project
+Financial Data Analysis --group 666
 
-Move your group members' names in this READMD file so that I can see them upfront.
+This repository contains the term paper for Financial Data Analysis.
+
+Our group mumbers include:
+
+Qing Lou        32014150018
+Qianqian Huang  32014150024
+Luyao Gao       32014150017
+Chunlin Liu     32014150013
+
+
