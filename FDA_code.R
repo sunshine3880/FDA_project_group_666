@@ -14,7 +14,7 @@
 > hpi=data$v4; mort=data$V5
 > plot(hpi,type='l')  
 > acf(hpi)   ## Indicates strong serial correlations (unit root)
-> dhpi=diff(hpi)  ## Working on differenced data 
+> dhpi=diff(hpi)  ## Working on differenced data for seasonal adjustion
 > acf(dhpi)
 > m1=ar(dhpi,method="mle")
 > m1$order
@@ -32,7 +32,7 @@ sample estimates:
 mean of x 
   0.31804 
 
-> m2=arima(hpi,order=c(12,1,0))
+> m2=arima(hpi,order=c(12,1,0))  ## we try AR(1) model with hpi being differentiate for once
 > m2
 
 Call:
@@ -48,7 +48,7 @@ s.e.  0.0698  0.0689   0.0436
 
 sigma^2 estimated as 0.04963:  log likelihood = 38.27,  aic = -50.54
 > tsdiag(m2,gof=24)
-> m3=arima(hpi,order = c(0,1,12))
+> m3=arima(hpi,order = c(0,1,12))  ## we try MA(1) model with hpi being differentiate for once
 > m3
 
 Call:
@@ -132,7 +132,7 @@ F-statistic: 4.807 on 1 and 497 DF,  p-value: 0.0288
 
 > acf(n1$residuals)
 > pacf(n1$residuals)  ### <== First two lags are significant
-> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)
+> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)  
 > m5
 
 Call:
