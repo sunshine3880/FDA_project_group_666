@@ -2,8 +2,8 @@
 > library(readxl)
 > data <- read_excel("~/qq/data.xlsx")
 > hpi=data$v4; mort=data$V5
-> plot(hpi,type='l')   ## Indicates strong serial correlations (unit root)
-> acf(hpi)
+> plot(hpi,type='l')  
+> acf(hpi)   ## Indicates strong serial correlations (unit root)
 > acf(diff(hpi))
 > m1=ar(diff(hpi),method="mle")
 > m1$order
@@ -52,3 +52,11 @@ s.e.  0.0463  0.0829  0.1111  0.1327   0.1348   0.1105   0.0828  0.0745
 s.e.  0.1083  0.1326  0.0939  0.0439
 
 sigma^2 estimated as 0.06846:  log likelihood = -42.29,  aic = 110.58
+
+
+## above results are not as good as the ARIMA(12,1,0) model.
+acf(hpi)
+acf(mort)
+plot(mort,type='l') ## Indicates strong serial correlations (unit root)  
+dhpi=diff(hpi)  ## Working on differenced data 
+acf(dhpi)
