@@ -94,8 +94,14 @@ An autoregressive (AR) model describes the time-varying processes of some specif
 Intuitively speaking, given a time series data $ \{x_i\}$, for each $x_t$, we believe that $x_{t-1}$, $x_{t-2}$, $x_{t-3}$ $\dots$ have the predictive power that can somewhat explain main portion of $x_t$ as an linear combination.
 Also, AR model contains a white noise series, or a stochastic term that can be imperfectly predicted.
 And with the time variant assumption, $x_t$ has a statistically significant lag-n autocorrelation, the lagged value $x_{t-1}$ might be the most powerful explanatory variable.
-
 In the model specification, R program helps us with the order that has significant influence on our AR regression.
+
+\begin{lstlisting}[language=R]
+> m1=ar(dhpi,method="mle")
+> m1$order
+[1] 12
+\end{lstlisting}
+
 And AR(12) is used in our model:
 \begin{equation}
 \begin{aligned}
@@ -110,7 +116,22 @@ One leading transmutation of ARIMA cut down the burdensome variables used in AR 
 With the spurn of high order model, some insignificant terms can be removed, the number of parameters used is sharply reduced, and the structure of the estimating model becomes parsimony.
 Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price index.
 
-This time we are using the ARIMA(5,0,4):
+\begin{lstlisting}[language=R]
+> tsdhpi=ts(dhpi)
+> auto.arima(tsdhpi)
+Series: tsdhpi 
+ARIMA(5,0,4) with non-zero mean 
+sigma^2 estimated as 0.06933:  log likelihood=-39.09
+AIC=100.18   AICc=100.72   BIC=146.54
+> m4=arima(dhpi,order = c(5,1,4))
+> m4
+Call:
+arima(x = dhpi, order = c(5, 1, 4))
+sigma^2 estimated as 0.04959:  log likelihood = 39.46,  
+aic = -58.93
+\end{lstlisting}
+
+This time we are using the ARIMA(5,1,4):
 \begin{equation}
 \begin{aligned}
 (1-\phi_1B+\phi_2B^2-\phi_3B^3-\phi_4B^4+\phi_5B^5)x_t \\
