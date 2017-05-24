@@ -33,7 +33,7 @@ This is abstract.
 
 Real estate economics is gradually becoming an irreplaceable facet of social topic in metropolis. 
 The captivate of the preemption of real estate is a double-edged sword that not only polarizes the rich and the poor, but also contains the incentives of the middle-class people of having house possession.
-One preponderant element of this trading is the house price, while the much latent compounds lying behind it could be the lending rate of this perticular kind of housing loan.
+One preponderant element of this trading is the house price, while the much latent compounds lying behind it could be the lending rate of this particular kind of housing loan.
 We are considering the lending rate in that the central government execute the management control system of the monetary market though various policy tool, the lending rate occupies an important position.
 The common sense makes it possible that the influence of the leading rate on the housing price is undeniable, but we still curious about the range of this effect.
 
@@ -45,17 +45,27 @@ Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is
 
 \section{Literature Review}
 
-\section{Estimation Method}
-\subsection{Autoregressive model}
-\subsection{Autoregressive Integrated Moving Average model}
-\subsection{General Autoregressive conditional heteroskedasticity model}
-
 \section{Data}
          The data we choose are two typical financial products: one is the Goverment bond and 
          the other bond is Corperation stock. One of the ultimate goals of our project is to 
          estimated the ARMA model. Because the characteristics of the two financial products 
          are greatly different to some extent, we want to figure out whether we will get two 
          different ARMA model with different lags.
+         
+\section{Model Specification}
+\subsection{Autoregressive model}
+An autoregressive (AR) model describes the time-varying processes of some specific variables, and it focus especially on the relationship among the localized data, always the data before time $t$. 
+Intuitively speaking, given a time series data $ \{x_i\}$, for each $x_t$, we believe that $x_{t-1}$, $x_{t-2}$, $x_{t-3}$ $\dots$ have the predictive power that can somewhat explain main portion of $x_t$ as an linear combination.
+Also, AR model contains a white noise series, or a stochastic term that can be imperfectly predicted.
+And with the time variant assumption, $x_t$ has a statistically significant lag-n autocorrelation, the lagged value $x_{t-1}$ might be the most powerful explanatory variable.
+In the model specification, R program helps us with the order that has significant influence on our AR regression.
+
++ formula 
+
+\subsection{Autoregressive Integrated Moving Average model}
+\subsection{General Autoregressive conditional heteroskedasticity model}
+
+
 
 \section{Empirical Results}
 
