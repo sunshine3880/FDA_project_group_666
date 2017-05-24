@@ -121,3 +121,21 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.817 on 497 degrees of freedom
 Multiple R-squared:  0.00958,	Adjusted R-squared:  0.007587 
 F-statistic: 4.807 on 1 and 497 DF,  p-value: 0.0288
+
+> acf(n1$residuals)
+> pacf(n1$residuals)  ### <== First two lags are significant
+> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)
+> m5
+
+Call:
+arima(x = dhpi, order = c(2, 0, 0), xreg = dmort, include.mean = F)
+
+Coefficients:
+         ar1      ar2   dmort
+      1.4729  -0.6005  0.0748
+s.e.  0.0356   0.0356  0.0340
+
+sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
+> tsdiag(m5,gof=24)
+> dim(data)
+[1] 501   5
