@@ -70,7 +70,12 @@ With the spurn of high order model, some insignificant terms can be removed, the
 Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price.
 
 \subsection{General Autoregressive conditional heteroskedasticity model}
-
+First, if an autoregressive moving average model (ARMA) model is assumed for the error variance, the model is a generalized autoregressive conditional heteroscedasticity (GARCH) model.
+Second, if we look at the basic autoregressive conditional heteroskedasticity (ARCH) model, the variance of the current term is a function of the pervious time series' error term. 
+The assumption of the time series data is serially uncorrelated but they are dependent, this time variant data is split into a stochastic piece which is a strong white noise and a time-dependent standard deviation.
+And in the GARCH ($p,q$) model, $p$ indicates the order of $\sigma^2$, $q$ indicates the order of the stochastic series.
+One thing needs to mention is that the model is highly relevant in volatility modeling, which means the GARCH model is the best method to test the volatility, for now.
+The tail distribution of GARCH is heavier than normal, but it is still provides a simple parametric function that can be used to describe the volatility evolution. 
 
 
 \section{Empirical Results}
