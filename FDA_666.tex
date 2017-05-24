@@ -4,6 +4,19 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amstext}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    numbers=left, 
+    numberstyle= \tiny, 
+    keywordstyle= \color{ blue!80},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    escapeinside=``, % 英文分号中可写入中文
+    xleftmargin=2.2em,xrightmargin=0.5em, aboveskip=1em,
+    framexleftmargin=2em
+} 
 \setlength{\topmargin}{-.4in}
 \setlength{\textheight}{9in}
 \setlength{\oddsidemargin}{.125in}
@@ -50,6 +63,14 @@ The data we choose are US National Housing Price Index with a base of 100 in 197
 We download the two data from the website ``FRED'' which is free. 
 Both of the two data are monthly recorded and not seasonly adjusted. 
 We use monthly-based data mainly because two reasion: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
+
+\begin{lstlisting}[language=R]
+library(readxl)
+data <- read_excel("data.xlsx")
+hpi=data$v4 % housing price
+mort=data$V5 % mortage rate
+\end{lstlisting}
+
          
 \section{Model Specification}
 \subsection{Autoregressive model}
