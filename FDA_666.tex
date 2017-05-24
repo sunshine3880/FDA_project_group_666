@@ -46,11 +46,11 @@ This is abstract.
 
 Real estate economics is gradually becoming an irreplaceable facet of social topic in metropolis. 
 The captivate of the preemption of real estate is a double-edged sword that not only polarizes the rich and the poor, but also contains the incentives of the middle-class people of having house possession.
-One preponderant element of this trading is the house price, while the much latent compounds lying behind it could be the lending rate of this particular kind of housing loan.
-We are considering the lending rate in that the central government execute the management control system of the monetary market though various policy tool, the lending rate occupies an important position.
-The common sense makes it possible that the influence of the leading rate on the housing price is undeniable, but we still curious about the range of this effect.
+One preponderant element of this trading is the house price, while the much latent compounds lying behind it could be the mortgage rate of this particular kind of housing loan.
+We are considering the mortgage rate in that the central government execute the management control system of the monetary market though various policy tool, the mortgage rate occupies an important position.
+The common sense makes it possible that the influence of the mortgage rate on the housing price is undeniable, but we still curious about the range of this effect.
 
-In our analysis of the relationship between the housing price and lending rate, the Autoregressive (AR) model fits the data by the order 12. 
+In our analysis of the relationship between the housing price index and mortgage rate, the Autoregressive (AR) model fits the data by the order 12. 
 Although this recognizable 12 provides no evidence to quarrel with, the Autoregressive Integrated Moving Average (ARIMA) Model illustrates the connection by more explanatory variables, especially the one from the error term in AR model.
 Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is used, but it does not yield the significance contribution on data fitting.
 
@@ -63,21 +63,21 @@ Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is
 The data we choose are US National Housing Price Index with a base of 100 in 1975 and 30-Year Conventional MortgageRate(DISCONTINUED). 
 We download the two data from the website ``FRED'' which is free. 
 Both of the two data are monthly recorded and not seasonly adjusted. 
-We use monthly-based data mainly because two reasion: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
-The time span of our sample data is during 1975.Jan. and 2016.Sep.and this is the only period we could find that contains both the two types of data
+We use monthly-based data mainly because two reason: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
+The time span of our sample data is during 1975.Jan. and 2016.Sep.and this is the only period we could find that contains both the two types of data.
 
 \subsection{Data description}
 We download the data from FRED by excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
 We combine the excle into one in order to make the process of importing data more easily.Therefore, there are 501 rows and 5 columns contained in the final data excel.
 The 501 rows represent the 501 different months we contained in our sample, from 1975.Jan to 2016.Sep.
 The first column represents YEAR, the second is MONTH and the third is DATE.
-THe fourth column represents  US National Housing Price Index Value and the last one is 30-Year Conventional MortgageRate(DISCONTINUED), which we use v4 and v5 to stand for the two columns in our code.
+The fourth column represents  US National Housing Price Index Value and the last one is 30-Year Conventional MortgageRate(DISCONTINUED), which we use v4 and v5 to stand for the two columns in our code.
 We did some basic analysis to the data as followed:
 
 \begin{lstlisting}[language=R]
 library(readxl)
 data <- read_excel("data.xlsx")
-hpi=data$v4 % US National Housing Price Index Valu
+hpi=data$v4 % US National Housing Price Index Value
 mort=data$V5 % 30-Year Conventional MortgageRate
 > summary(hpi)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -94,16 +94,29 @@ An autoregressive (AR) model describes the time-varying processes of some specif
 Intuitively speaking, given a time series data $ \{x_i\}$, for each $x_t$, we believe that $x_{t-1}$, $x_{t-2}$, $x_{t-3}$ $\dots$ have the predictive power that can somewhat explain main portion of $x_t$ as an linear combination.
 Also, AR model contains a white noise series, or a stochastic term that can be imperfectly predicted.
 And with the time variant assumption, $x_t$ has a statistically significant lag-n autocorrelation, the lagged value $x_{t-1}$ might be the most powerful explanatory variable.
-In the model specification, R program helps us with the order that has significant influence on our AR regression.
 
-+ formula 
+In the model specification, R program helps us with the order that has significant influence on our AR regression.
+And AR(12) is used in our model:
+\begin{equation}
+\begin{aligned}
+(1-\phi_1B+\phi_2B^2+ \cdots + \phi_{12}B^{12})x_t=a_t.
+\end{aligned}
+\end{equation}
 
 \subsection{Autoregressive Integrated Moving Average model}
 An autoregressive integrated moving average (ARIMA) model provide a parsimonious description of stochastic process. 
 The AR part is regressed on its own lagged, the (moving average) MA part is a linear combination of lagged error term occurring contemporaneously, the I part illustrates the difference of the value and their previous value. 
 One leading transmutation of ARIMA cut down the burdensome variables used in AR model and MA models, but it still adequate to simulate the data with dynamic structure in our analysis.
 With the spurn of high order model, some insignificant terms can be removed, the number of parameters used is sharply reduced, and the structure of the estimating model becomes parsimony.
-Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price.
+Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price index.
+
+This time we are using the ARIMA(5,0,4):
+\begin{equation}
+\begin{aligned}
+(1-\phi_1B+\phi_2B^2-\phi_3B^3-\phi_4B^4+\phi_5B^5)x_t \\
+= a_t -\theta_1 a_{t-1}+\theta_2a_{t-2}-\theta_3a_{t-3}+\theta_4a_{t-4}.
+\end{aligned}
+\end{equation}
 
 \subsection{General Autoregressive conditional heteroskedasticity model}
 First, if an autoregressive moving average model (ARMA) model is assumed for the error variance, the model is a generalized autoregressive conditional heteroscedasticity (GARCH) model.
