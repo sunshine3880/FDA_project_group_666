@@ -74,3 +74,37 @@ s.e.  0.0434   0.0687   0.0696  0.0710   0.0725   0.0725  0.0724  0.0729   0.071
 s.e.  0.0698  0.0689   0.0436
 
 sigma^2 estimated as 0.04963:  log likelihood = 38.27,  aic = -50.54
+
+> dmort=diff(mort)
+> length(dmort)
+[1] 500
+> y=dhpi[2:500]; x=dmort[1:499];
+> n1=lm(y~x)
+> n1
+
+Call:
+lm(formula = y ~ x)
+
+Coefficients:
+(Intercept)            x  
+     0.3219       0.2753  
+
+> summary(n1)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.8216 -0.2826 -0.0219  0.2232  2.6871 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.32190    0.03661   8.794   <2e-16 ***
+x            0.27533    0.12558   2.193   0.0288 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.817 on 497 degrees of freedom
+Multiple R-squared:  0.00958,	Adjusted R-squared:  0.007587 
+F-statistic: 4.807 on 1 and 497 DF,  p-value: 0.0288
