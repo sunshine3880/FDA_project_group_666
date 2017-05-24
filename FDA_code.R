@@ -147,3 +147,6 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 > tsdiag(m5,gof=24)
 > dim(data)
 [1] 501   5
+> idx=c(1:501)[data[,1]==2007]
+> idx
+ [1] 385 386 387 388 389 390 391 392 393 394 395 396
