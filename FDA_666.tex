@@ -64,17 +64,27 @@ The data we choose are US National Housing Price Index with a base of 100 in 197
 We download the two data from the website ``FRED'' which is free. 
 Both of the two data are monthly recorded and not seasonly adjusted. 
 We use monthly-based data mainly because two reasion: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
+The time span of our sample data is during 1975.Jan. and 2016.Sep.and this is the only period we could find that contains both the two types of data
 
 \subsection{Data description}
 We download the data from FRED by excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
 We combine the excle into one in order to make the process of importing data more easily.Therefore, there are 501 rows and 5 columns contained in the final data excel.
-
+The 501 rows represent the 501 different months we contained in our sample, from 1975.Jan to 2016.Sep.
+The first column represents YEAR, the second is MONTH and the third is DATE.
+THe fourth column represents  US National Housing Price Index Value and the last one is 30-Year Conventional MortgageRate(DISCONTINUED), which we use v4 and v5 to stand for the two column in our code.
+We did some basci analysis to the data as followed:
 
 \begin{lstlisting}[language=R]
 library(readxl)
 data <- read_excel("data.xlsx")
-hpi=data$v4 % housing price
-mort=data$V5 % mortage rate
+hpi=data$v4 % US National Housing Price Index Valu
+mort=data$V5 % 30-Year Conventional MortgageRate
+> summary(hpi)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  25.25   55.72   81.66   97.76  144.00  184.60 
+> summary(mort)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  3.350   5.970   7.910   8.294  10.080  18.450
 \end{lstlisting}
 
          
