@@ -93,6 +93,13 @@ s.e.  2.9372   7.2176  7.7010  3.9729   1.0550   3.1819  7.1913   6.1580  1.8354
 
 sigma^2 estimated as 0.04959:  log likelihood = 39.46,  aic = -58.93
 
+> Box.test(m4$residuals,lag = 12,type = 'Ljung')
+
+	Box-Ljung test
+
+data:  m4$residuals
+X-squared = 54.284, df = 12, p-value = 2.431e-07
+
 ## above results are not as good as the ARIMA(5,1,4) model.
 
 acf(mort)
