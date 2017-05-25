@@ -160,6 +160,36 @@ The tail distribution of GARCH is heavier than normal, but it still provides a s
 
 
 \section{Empirical Results}
+In this section, we apply the proposed estimation method to the housing price index and mortgage rate to demonstrate its fitness. 
+In the empirical, we target at investigating following question. 
+(1) How effective is the proposed method? 
+(2) How consilient does the representing formulation describe the data relaitonship? 
+
+First, let's take a look at the inter-correlation within the housing price index. 
+The left picture of figure 1 provides a strong evidence for the trending of this time variant data, we can mainly predicate that this is an unit root process, and it is also stationary. 
+The right picture of figure 1 is the ACF after we have make one difference on the data, it is so clearly that the differenced data has seasonal adjusting, and about 12 months as a cycle.
+That makes sense to us because this 12 months' cycle reflects indirectly the varying of one year's preference for the housing. 
+
+\begin{figure*}[h!]
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{6}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+\qquad 
+\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{8}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+ \vspace{-0.4cm}
+ \caption{ ACF and PACF of housing price index fitted from 1975. Jan to 2016. Sep.}
+      \label{fig:time}
+\vspace{-.25cm}
+\end{figure*}
 
 \section{Discussion}
 
