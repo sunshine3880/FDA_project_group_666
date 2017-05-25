@@ -66,14 +66,6 @@ Both of the two data are monthly recorded and not seasonly adjusted.
 We use monthly-based data mainly because two reason: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
 The time span of our sample data is during 1975.Jan. and 2016.Sep. which is the only period we could find that contains both the two types of data.
 
-\subsection{Data description}
-We download the data from FRED by excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
-We combine the excle into one in order to make the process of importing data more easily.Therefore, there are 501 rows and 5 columns contained in the final data excel.
-The 501 rows represent the 501 different months we contained in our sample, from 1975.Jan to 2016.Sep.
-The first column represents YEAR, the second is MONTH and the third is DATE.
-The fourth column is the data of US National Housing Price Index Value and the last one is of 30-Year Conventional MortgageRate(DISCONTINUED), which we use v4 and v5 to stand for the two columns in our code.
-We did some basic analysis for the data as followed:
-
 \begin{lstlisting}[language=R]
 library(readxl)
 data <- read_excel("data.xlsx")
@@ -85,6 +77,17 @@ head(data)
 4 1975  4  1 25.40 8.82
 5 1975  5  1 25.48 8.91
 6 1975  6  1 25.46 8.89
+\end{lstlisting}
+
+\subsection{Data description}
+We download the data from FRED by excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
+We combine the excel into one in order to make the process of importing data more easily.Therefore, there are 501 rows and 5 columns contained in the final data excel.
+The 501 rows represent the 501 different months we contained in our sample, from 1975.Jan to 2016.Sep.
+The first column represents YEAR, the second is MONTH and the third is DATE.
+The fourth column is the data of US National Housing Price Index Value and the last one is of 30-Year Conventional MortgageRate(DISCONTINUED), which we use v4 and v5 to stand for the two columns in our code.
+We did some basic analysis for the data as followed:
+
+\begin{lstlisting}[language=R]
 hpi=data$v4 % US National Housing Price Index Value
 mort=data$V5 % 30-Year Conventional MortgageRate
 summary(hpi)
