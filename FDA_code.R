@@ -11,8 +11,10 @@
 4 1975  4  1 25.40 8.82
 5 1975  5  1 25.48 8.91
 6 1975  6  1 25.46 8.89
-> hpi=data$v4; mort=data$V5
-> plot(hpi,type='l')  
+> hpi=data$v4; mort=data$v5； 
+> plot(hpi,type='l',col="red");
+> par(new=TRUE);
+> plot(mort,type='l',col="blue"); ## plot the data of hpi and mort in one picture
 > acf(hpi)   ## Indicates strong serial correlations (unit root)
 > dhpi=diff(hpi)  ## Working on differenced data for seasonal adjustion
 > acf(dhpi)
