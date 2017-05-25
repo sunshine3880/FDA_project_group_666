@@ -152,3 +152,8 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 > idx=c(1:501)[data[,1]==2007]
 > idx
  [1] 385 386 387 388 389 390 391 392 393 394 395 396
+> backtest(m5,dhpi,384,1,inc.mean = F,xre=dmort)
+[1] "RMSE of out-of-sample forecasts"
+[1] 0.515049
+[1] "Mean absolute error of out-of-sample forecasts"
+[1] 0.3533172
