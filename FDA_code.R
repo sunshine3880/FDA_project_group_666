@@ -112,7 +112,7 @@ X-squared = 0.34351, df = 1, p-value = 0.5578
 acf(mort)
 plot(mort,type='l') ## Indicates strong serial correlations (unit root)  
 
-> y=hpi[2:500]; x=mort[1:499];
+> y=hpi[2:500]; x=mort[2:500];
 > n1=lm(y~x)
 > n1
 
@@ -145,14 +145,14 @@ F-statistic: 752.1 on 1 and 497 DF,  p-value: < 2.2e-16
 
 > acf(n1$residuals)
 > pacf(n1$residuals)  ### <== First two lags are significant
-> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)
+> m5=arima(hpi,order=c(2,0,0),include.mean=F,xreg=mort)
 > m5
 
 Call:
-arima(x = dhpi, order = c(2, 0, 0), xreg = dmort, include.mean = F)
+arima(x = hpi, order = c(2, 0, 0), xreg = mort, include.mean = F)
 
 Coefficients:
-         ar1      ar2   dmort
+         ar1      ar2   mort
       1.4729  -0.6005  0.0748
 s.e.  0.0356   0.0356  0.0340
 
@@ -208,7 +208,7 @@ Coefficients:
 s.e.  0.0356   0.0356  0.0340
 
 sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
-> tsdiag(m5,gof=24)
+> tsdiag(m6,gof=24)
 
 > dim(data)
 [1] 501   5
