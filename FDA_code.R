@@ -112,10 +112,7 @@ X-squared = 0.34351, df = 1, p-value = 0.5578
 acf(mort)
 plot(mort,type='l') ## Indicates strong serial correlations (unit root)  
 
-> dmort=diff(mort)
-> length(dmort)
-[1] 500
-> y=dhpi[2:500]; x=dmort[1:499];
+> y=hpi[2:500]; x=mort[1:499];
 > n1=lm(y~x)
 > n1
 
@@ -124,9 +121,60 @@ lm(formula = y ~ x)
 
 Coefficients:
 (Intercept)            x  
-     0.3219       0.2753  
+     193.19       -11.48  
 
 > summary(n1)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-66.44 -18.44   0.08  16.45  68.85 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 193.1870     3.7381   51.68   <2e-16 ***
+x           -11.4821     0.4187  -27.42   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 30.46 on 497 degrees of freedom
+Multiple R-squared:  0.6021,	Adjusted R-squared:  0.6013 
+F-statistic: 752.1 on 1 and 497 DF,  p-value: < 2.2e-16
+
+> acf(n1$residuals)
+> pacf(n1$residuals)  ### <== First two lags are significant
+> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)
+> m5
+
+Call:
+arima(x = dhpi, order = c(2, 0, 0), xreg = dmort, include.mean = F)
+
+Coefficients:
+         ar1      ar2   dmort
+      1.4729  -0.6005  0.0748
+s.e.  0.0356   0.0356  0.0340
+
+sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
+> tsdiag(m5,gof=24)
+
+
+> dmort=diff(mort)
+> length(dmort)
+[1] 500
+> y=dhpi[2:500]; x=dmort[1:499];
+> n2=lm(y~x)
+> n2
+
+Call:
+lm(formula = y ~ x)
+
+Coefficients:
+(Intercept)            x  
+     0.3219       0.2753  
+
+> summary(n2)
 
 Call:
 lm(formula = y ~ x)
@@ -146,10 +194,10 @@ Residual standard error: 0.817 on 497 degrees of freedom
 Multiple R-squared:  0.00958,	Adjusted R-squared:  0.007587 
 F-statistic: 4.807 on 1 and 497 DF,  p-value: 0.0288
 
-> acf(n1$residuals)
-> pacf(n1$residuals)  ### <== First two lags are significant
-> m5=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)  
-> m5
+> acf(n2$residuals)
+> pacf(n2$residuals)  ### <== First two lags are significant
+> m6=arima(dhpi,order=c(2,0,0),include.mean=F,xreg=dmort)  
+> m6
 
 Call:
 arima(x = dhpi, order = c(2, 0, 0), xreg = dmort, include.mean = F)
@@ -161,12 +209,15 @@ s.e.  0.0356   0.0356  0.0340
 
 sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 > tsdiag(m5,gof=24)
+
 > dim(data)
 [1] 501   5
 > idx=c(1:501)[data[,1]==2007]
 > idx
  [1] 385 386 387 388 389 390 391 392 393 394 395 396
+
 > backtest(m5,dhpi,384,1,inc.mean = F,xre=dmort)
+
 [1] "RMSE of out-of-sample forecasts"
 [1] 0.515049
 [1] "Mean absolute error of out-of-sample forecasts"
