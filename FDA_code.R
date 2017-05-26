@@ -96,15 +96,16 @@ s.e.   0.1095   0.0829  0.0678  0.0886   0.0760  0.1066  0.1708  0.1561
 s.e.  0.0874
 
 sigma^2 estimated as 0.0693:  log likelihood = -44.05,  aic = 108.09
-> Box.test(m4$ residuals)
+> Box.test(m4$residuals)
 
 	Box-Pierce test
 
 data:  m4$residuals
-X-squared = 0.22052, df = 1, p-value = 0.6386
-> pp=1-pchisq(13.30,12)
+X-squared = 0.34351, df = 1, p-value = 0.5578
+
+> pp=1-pchisq(0.34,12)
 > pp
-[1] 0.3476178
+[1] 1
 
 ## above results are not as good as the ARIMA(5,1,4) model.
 
