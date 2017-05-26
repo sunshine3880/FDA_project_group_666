@@ -39,9 +39,9 @@
 \newpage
 \clearpage
 
-\begin{abstract}
-This is abstract.
-\end{abstract}
+
+
+
 
 \section{Introduction}
 
@@ -55,7 +55,8 @@ In our analysis of the relationship between the housing price index and mortgage
 Although this recognizable 12 provides no evidence to quarrel with, the Autoregressive Integrated Moving Average (ARIMA) Model illustrates the connection by more explanatory variables, especially the one from the error term in AR model.
 Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is used, but it does not yield the significance contribution on data fitting.
 
-+conlcusion
+The analysis of the dataset of housing price index and mortgage rate provides a good estimation process to their relationship. 
+They are negatively related, and we has given the linear model as the most efficient and simplest model.
 
 \section{Literature Review}
 In recent years, the housing price and the lending rate have gained many people’s attention. Researchers study them and want to find the relationship between these two index.
@@ -233,6 +234,54 @@ s.e.  0.0729   0.0713   0.0698  0.0689   0.0436
 sigma^2 estimated as 0.04963:  log likelihood = 38.27,  aic = -50.54
 \end{lstlisting}
 }
+
+%\begin{figure}[h!]
+% \includegraphics[scale=.35]{5}\\
+%  \caption{ The test for the fitness of AR(12) model}
+%      \label{fig:time}
+% \end{figure}
+
+We also tried the MA(12) model, but unfortunately, this MA(12) model has $aic = 110.58$ and $log likelihood = -42.29$. 
+We do not think that it is a good model for predicting this housing price index dataset, and we do not give the representation of it here.
+
+After the AR and MA model, we think the combination of these two will also make sense, so we tried the ARIMA model.
+Before we do the simulation, we transform the data into a time series one by using the `ts' commend in RStudio.
+The `auto.arima' commend gives us the automatic simulation of these housing price index data on the ARIMA model, and it provides the ARIMA(5,0,4) for the data which has been differentiate for once.
+That is equivalent to the result that we would have a ARIMA(5,1,4) for the original data, the data without differentiate.
+And the model is: 
+
+\begin{equation}
+\begin{aligned}
+(1+0.220B+0.05B^2-0.726B^3-0.004B^4+0.163B^5)x_t \\
+= a_t +1.728a_{t-1}+2.145a_{t-2}+1.184a_{t-3}+0.429a_{t-4}
+\end{aligned}
+\end{equation}
+
+{\footnotesize
+\begin{lstlisting}[language=R]
+> m4=arima(hpi,order = c(5,1,4))
+> m4
+Call: 
+arima(x = hpi, order = c(5, 1, 4))
+Coefficients:
+          ar1      ar2     ar3     ar4      ar5     ma1     ma2     ma3
+      -0.2191  -0.0476  0.7262  0.0043  -0.1634  1.7278  2.1454  1.1841
+s.e.   0.1095   0.0829  0.0678  0.0886   0.0760  0.1066  0.1708  0.1561
+         ma4
+      0.4289
+s.e.  0.0874
+sigma^2 estimated as 0.0693:  log likelihood = -44.05,  aic = 108.09
+> Box.test(m4$residuals)
+	Box-Pierce test
+data:  m4$residuals  
+X-squared = 0.34351, df = 1, p-value = 0.5578
+> pp=1-pchisq(0.34,12)
+> pp
+[1] 1 
+\end{lstlisting}
+}
+
+
 
 
 \section{Discussion}
