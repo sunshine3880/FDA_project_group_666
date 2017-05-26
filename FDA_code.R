@@ -81,24 +81,30 @@ s.e.  0.0818  0.0919
 
 sigma^2 estimated as 0.06933:  log likelihood=-39.09
 AIC=100.18   AICc=100.72   BIC=146.54
-> m4=arima(dhpi,order = c(5,1,4))
+> m4=arima(hpi,order = c(5,1,4))
 > m4
+
 Call:
-arima(x = dhpi, order = c(5, 1, 4))
+arima(x = hpi, order = c(5, 1, 4))
 
 Coefficients:
-         ar1      ar2     ar3     ar4      ar5      ma1     ma2      ma3     ma4
-      2.0027  -1.7935  0.4468  0.3302  -0.3657  -1.8412  1.4208  -0.3985  0.0372
-s.e.  2.9372   7.2176  7.7010  3.9729   1.0550   3.1819  7.1913   6.1580  1.8354
+          ar1      ar2     ar3     ar4      ar5     ma1     ma2     ma3
+      -0.2191  -0.0476  0.7262  0.0043  -0.1634  1.7278  2.1454  1.1841
+s.e.   0.1095   0.0829  0.0678  0.0886   0.0760  0.1066  0.1708  0.1561
+         ma4
+      0.4289
+s.e.  0.0874
 
-sigma^2 estimated as 0.04959:  log likelihood = 39.46,  aic = -58.93
+sigma^2 estimated as 0.0693:  log likelihood = -44.05,  aic = 108.09
+> Box.test(m4$ residuals)
 
-> Box.test(m4$residuals,lag = 12,type = 'Ljung')
-
-	Box-Ljung test
+	Box-Pierce test
 
 data:  m4$residuals
-X-squared = 54.284, df = 12, p-value = 2.431e-07
+X-squared = 0.22052, df = 1, p-value = 0.6386
+> pp=1-pchisq(13.30,12)
+> pp
+[1] 0.3476178
 
 ## above results are not as good as the ARIMA(5,1,4) model.
 
