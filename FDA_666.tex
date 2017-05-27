@@ -336,6 +336,7 @@ Because we see the steep change both in the mortgage rate in about 1980s and the
 Would it be the residual that made that bad estimation? 
 Or would here be some special cases in this time period?
 
+First, consider the residuals' part.
 The ACF of our linear residuals shows a stationary trend in this relationship between housing price index and mortgage rate. 
 The PACF of our linear residuals in the right graph in Figure 3 shows significance in the first two lags.
 We use this information to further discuss the residuals in our linear regression model.
@@ -363,6 +364,7 @@ We use this information to further discuss the residuals in our linear regressio
 
 The residuals forms an AR(2) model with housing price index on the left side of the equation, while mortgage rate on the right.
 The equation is: 
+
 \begin{equation}
 \begin{aligned}
 (1-1.473B+0.601B^2) hpi = 0.075mort.
@@ -383,8 +385,12 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 \end{lstlisting}
 }
 
+But it's not a good explanation, the aic is big and the t-test is significant.\\
 
-\section{Discussion}
+Second, consider the residuals' part.
+
+
+\subsection{Trend of the Difference}
 
 \section{Conclusion}
 
