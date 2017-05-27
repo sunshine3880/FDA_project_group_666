@@ -253,7 +253,7 @@ And the model is:
 \begin{equation}
 \begin{aligned}
 (1+0.220B+0.05B^2-0.726B^3-0.004B^4+0.163B^5)x_t \\
-= a_t +1.728a_{t-1}+2.145a_{t-2}+1.184a_{t-3}+0.429a_{t-4}
+= a_t +1.728a_{t-1}+2.145a_{t-2}+1.184a_{t-3}+0.429a_{t-4}.
 \end{aligned}
 \end{equation}
 
@@ -281,6 +281,38 @@ X-squared = 0.34351, df = 1, p-value = 0.5578
 \end{lstlisting}
 }
 
+We also have basic analysis of the mortgage rate, see Figure 2. 
+The ACF shows a strong serial correlations, and the PACF only significant on 1,2,3.
+And we can conclude that the mortgage rate is almost a stationary data.
+
+\begin{figure*}[h!]
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{4}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+\qquad
+\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{9}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+ \vspace{-.1cm}
+ \caption{ ACF and PACF of mortgage rate fitted from 1975. Jan to 2016. Sep.}
+      \label{fig:time}
+\vspace{-.25cm}
+\end{figure*}
+
+Here comes the most focused part of our analysis on the relationship about the housing price index and mortgage rate. 
+By using the `plot' commend in RStudio, we have a intuitively negative relationship, see the following picture.
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[scale=.7]{10}\\
+\end{figure}
 
 
 
