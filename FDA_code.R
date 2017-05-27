@@ -225,3 +225,29 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 [1] 0.515049
 [1] "Mean absolute error of out-of-sample forecasts"
 [1] 0.3533172
+### arch model
+> acf(hpi^2)
+> acf(dhpi^2)
+> pacf(dhpi^2)
+> source("archtest.R")
+> m7=archTest(dhpi,2)
+> m7
+
+Call:
+lm(formula = atsq ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.8685 -0.1381 -0.1188 -0.0560  5.7094 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.12633    0.03761   3.359 0.000843 ***
+x1           1.16821    0.04200  27.815  < 2e-16 ***
+x2          -0.35628    0.04200  -8.483 2.55e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.7709 on 495 degrees of freedom
+Multiple R-squared:  0.7746,	Adjusted R-squared:  0.7737 
+F-statistic: 850.7 on 2 and 495 DF,  p-value: < 2.2e-16
