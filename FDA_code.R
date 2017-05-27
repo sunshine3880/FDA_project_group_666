@@ -15,6 +15,10 @@
 > plot(hpi,type='l',col="red");
 > par(new=TRUE);
 > plot(mort,type='l',col="blue"); ## plot the data of hpi and mort in one picture
+> y1=hpi[100:380]; x1=mort[100:380];
+> plot(y1,type='l',col="red");
+> par(new=TRUE);
+> plot(x1,type='l',col="blue");   ## plot the data of hpi and mort without putliar in one picture  
 > acf(hpi)   ## Indicates strong serial correlations (unit root)
 > dhpi=diff(hpi)  ## Working on differenced data for seasonal adjustion
 > acf(dhpi)
