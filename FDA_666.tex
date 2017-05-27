@@ -314,6 +314,63 @@ By using the `plot' commend in RStudio, we have a intuitively negative relations
  \includegraphics[scale=.7]{10}\\
 \end{figure}
 
+And we are also wondering if we could just do it using a basic linear model. 
+We it provides good estimation because the t-test of both the intercept and coefficient is significant on $99\%$ confidence interval and the adjusted R-squared equals 0.603. 
+All this information gives us the ordinary least squares regression:
+
+\begin{equation}
+\begin{aligned}
+&hpi =&193.19  -  &11.48 { \ }mort \\
+&        & 3.738   \quad&0.418
+\end{aligned}
+\end{equation}
+
+The ACF of our linear residuals shows a stationary trend in this relationship between housing price index and mortgage rate. 
+The PACF of our linear residuals in the right graph in Figure 3 shows significance in the first two lags.
+We use this information to further discuss the residuals in our linear regression model.
+
+\begin{figure*}[h!]
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{12}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+\qquad
+\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{11}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+ \vspace{-.1cm}
+ \caption{ ACF and PACF of linear residuals fitted from 1975. Jan to 2016. Sep.}
+      \label{fig:time}
+\vspace{-.25cm}
+\end{figure*}
+
+The residuals forms an AR(2) model with housing price index on the left side of the equation, while mortgage rate on the right.
+The equation is: 
+\begin{equation}
+\begin{aligned}
+(1-1.473B+0.601B^2) hpi = 0.075mort.
+\end{aligned}
+\end{equation}
+
+{\footnotesize
+\begin{lstlisting}[language=R]
+> m5=arima(hpi,order=c(2,0,0),include.mean=F,xreg=mort)
+> m5
+Call:
+arima(x = hpi, order = c(2, 0, 0), xreg = mort, include.mean = F)
+Coefficients:
+         ar1      ar2   mort
+      1.4729  -0.6005  0.0748
+s.e.  0.0356   0.0356  0.0340
+sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
+\end{lstlisting}
+}
 
 
 \section{Discussion}
