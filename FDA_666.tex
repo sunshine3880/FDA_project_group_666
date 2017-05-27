@@ -315,8 +315,9 @@ By using the `plot' commend in RStudio, we have a intuitively negative relations
 \end{figure}
 
 And we are also wondering if we could just do it using a basic linear model. 
-We it provides good estimation because the t-test of both the intercept and coefficient is significant on $99\%$ confidence interval and the adjusted R-squared equals 0.603. 
-All this information gives us the ordinary least squares regression:
+We think it provides bad estimation because the t-test of both the intercept and coefficient is significant on $99\%$ confidence interval and the adjusted R-squared equals 0.603. 
+And also because we see the steep change both in the mortgage rate in about 1980 and the housing price index in about 2008.
+But we here still give the function of this linear regression:
 
 \begin{equation}
 \begin{aligned}
@@ -324,6 +325,16 @@ All this information gives us the ordinary least squares regression:
 &        & 3.738   \quad&0.418
 \end{aligned}
 \end{equation}
+
+\section{Discussion of Linear Model}
+
+In our paper, the basic topic is the relationship between housing price index and the mortgage rate, so we will have more deeper discussion in this section.
+
+\subsection{Reasons for this Bad Estimation}
+As we have mentioned before, we do not think that the linear model is a good estimation to relate housing price index with the mortgage rate.
+Because we see the steep change both in the mortgage rate in about 1980s and the housing price index in about 2008, it is reasonable to think about the expectations.
+Would it be the residual that made that bad estimation? 
+Or would here be some special cases in this time period?
 
 The ACF of our linear residuals shows a stationary trend in this relationship between housing price index and mortgage rate. 
 The PACF of our linear residuals in the right graph in Figure 3 shows significance in the first two lags.
