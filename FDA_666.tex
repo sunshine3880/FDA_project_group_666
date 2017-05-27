@@ -321,7 +321,7 @@ But we here still give the function of this linear regression:
 
 \begin{equation}
 \begin{aligned}
-&hpi =&193.19  -  &11.48 { \ }mort \\
+&hpi =&193.19  -  &11.48 { \ }mort. \\
 &        & 3.738   \quad&0.418
 \end{aligned}
 \end{equation}
@@ -387,10 +387,77 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 
 But it's not a good explanation, the aic is big and the t-test is significant.\\
 
-Second, consider the residuals' part.
+Second, consider the information part. 
+All of us think this part makes more sense to the reason that the steep change in both dataset.
+The financial crisis in about 1980 and 2008 obviously make the change in the housing price index and the mortgage rate.
 
+But why the financial crisis in about 1980 have a such huge impact on the mortgage rate, but almost no change in housing price?
+It has some issue rooted in history, like the baby boomers.
+Baby boomers in the United States, those born in the post-war generation over the 19 year period between 1946 and 1965, has becoming to the age of marriage.
+And that has signifiant increase in the demand of the house because we know that most of them moved out from their parents's house after marriage.
+We do not know the most exactly why the housing price does not change that much, but we can guess that it is for some reality reasons.
+
+And if we look at the financial crisis in 2008, it provides enough information for the suddenly climb.
+In 2003, the federal funds rate is about 1.01$\%$, and after considering the inflation, it was actually a negative interest.
+This breaks the balance of the prudent savings and speculative risk, and it stimulates the opportunist in housing markets.
+That drives the housing price up in a very short period.
+We see the final results of this property bubble, it's the 2008 Financial Crisis.
+And that makes our regression model more reasonable for it does not fit the data that much.
 
 \subsection{Trend of the Difference}
+
+In this section, we talk about the variance in the dataset.
+To be specific, we are analysis the relationship between the $hpi_n-phi_{n-1}$and $mort_n-nort_{n-1}$.
+We are curious that the difference in the dataset will following which trend? 
+Will they has the positive relationship? 
+The code provides the answer: 
+
+\begin{equation}
+\begin{aligned}
+&dhpi =&0.322  -  &0.275 { \ }dmort \\
+&         & 0.037   \quad&0.126
+\end{aligned}
+\end{equation}
+
+{\footnotesize
+\begin{lstlisting}[language=R]
+> y=dhpi[2:500]; x=dmort[1:499];
+> n2=lm(y~x)
+> n2
+lm(formula = y ~ x)
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.32190    0.03661   8.794   <2e-16 ***
+x            0.27533    0.12558   2.193   0.0288 *  
+\end{lstlisting}
+}
+
+Now we can conclude that, the t-test of coefficient is significant on $95\%$ confidence interval, and the intercept is signifiant on $99\%$ confidence interval.
+As we just did to the linear regression for non-differentiated term, we take a look at the linear residuals.
+The ACF provides the evidence that there exists a seasonal trend in the residuals, that may explains the model.
+
+\begin{figure*}[h!]
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{15}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+\qquad
+\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{center}
+ \includegraphics[scale=0.5]{14}
+ \vspace{-0.4cm}
+\end{center}
+\end{subfigure}
+ \vspace{-.1cm}
+ \caption{ ACF and PACF of n2 residuals fitted from 1975. Jan to 2016. Sep.}
+      \label{fig:time}
+\vspace{-.25cm}
+\end{figure*}
+
+
 
 \section{Conclusion}
 
