@@ -45,35 +45,37 @@
 
 \section{Introduction}
 
-Real estate economics is gradually becoming an irreplaceable facet of social topic in metropolis. 
-The captivate of the preemption of real estate is a double-edged sword that not only polarizes the rich and the poor, but also contains the incentives of the middle-class people of having house possession.
+Real estate economics is gradually becoming an irreplaceable facet of the social topic in the metropolis. 
+The captivate of the preemption of real estate is a double-edged sword that not only polarizes the rich and the poor but also contains the incentives of the middle-class people of having house possession.
 One preponderant element of this trading is the house price, while the much latent compounds lying behind it could be the mortgage rate of this particular kind of housing loan.
-We are considering the mortgage rate in that the central government execute the management control system of the monetary market though various policy tool, the mortgage rate occupies an important position.
-The common sense makes it possible that the influence of the mortgage rate on the housing price is undeniable, but we still curious about the range of this effect.
+We are considering the mortgage rate in that the central government executes the management control system of the monetary market through various policy tool, the mortgage rate occupies an important position.
+Common sense makes it possible that the influence of the mortgage rate on the housing price is undeniable, but we still curious about the range of this effect.
 
 In our analysis of the relationship between the housing price index and mortgage rate, the Autoregressive (AR) model fits the data by the order 12. 
 Although this recognizable 12 provides no evidence to quarrel with, the Autoregressive Integrated Moving Average (ARIMA) Model illustrates the connection by more explanatory variables, especially the one from the error term in AR model.
 Also, the General Autoregressive conditional heteroskedasticity (GARCH) model is used, but it does not yield the significance contribution on data fitting.
 
 The analysis of the dataset of housing price index and mortgage rate provides a good estimation process to their relationship. 
-They are negatively related, and we has given the linear model as the most efficient and simplest model.
+They are negatively related, and we have given the linear model as the most efficient and simplest model.
 
 \section{Literature Review}
-In recent years, the housing price and the lending rate have gained many people’s attention. Researchers study them and want to find the relationship between these two index.
-The brief definition of housing price index(HPI) is the price changes of residential housing. Lending rate ,also called the mortgage rate is the rate of interest charged on a mortgage. Mortgage rates are determined by the lender in most cases.
-Since the 1970s of last century, the relationship between housing price and mortgage rate has drawn many real estate researchers’ attention in aboard. In a paper called MORTGAGE RATE BUYDOWNS: IMPLICATIONS FOR HOUSING PRICE INDEXES (VB Agarwal RA Phillips,Social Science Quarterly, 1984 , 65 (3) :868-875) using FHA-VA transaction to show that the prices of buydown homes tend to be elevated as compared to other properties, and the housing price index are likely to be distorted with the influence of mortgage rate. 
-In paper Do lower mortgage rates mean higher housing prices? (JAMES M. MCGIBANY* and FARROKH NOURZAD, Applied Economics, 2004 , 36 (4) :305-313) analyzes the housing price index and mortgage rate in both long run and short run, compared with each other finds that in long run they have a negative relationship, but in short run there is no influence from mortgage rate to housing price index. 
-The previous research give us a brief idea that we want to analyze the long run HPI and mortgage rate with real estate.
+In recent years, the housing price and the lending rate have gained many people’s attention. Researchers study them and want to find the relationship between this two index.
+The brief definition of housing price index(HPI) is the price changes of residential housing. 
+Lending rate, also called the mortgage rate, is the rate of interest charged on a mortgage. Mortgage rates are determined by the lender in most cases.
+Since the 1970s of last century, the relationship between housing price and mortgage rate has drawn many real estate researchers’ attention in aboard. In a paper called MORTGAGE RATE BUYDOWNS: IMPLICATIONS FOR HOUSING PRICE INDEXES (VB Agarwal RA Phillips,Social Science Quarterly, 1984 , 65 (3) :868-875) using FHA-VA transaction to show that the prices of buydown homes tend to be elevated as compared to other properties, and the housing price index are likely to be distorted by the influence of mortgage rate. 
+In paper Do lower mortgage rates mean higher housing prices? (JAMES M. MCGIBANY* and FARROKH NOURZAD, Applied Economics, 2004 , 36 (4) :305-313) analyzes the housing price index and mortgage rate in both long run and short run, compared with each other finds that in long run, they have a negative relationship, but in short run there is no influence from mortgage rate to housing price index. 
+The previous research gives us a brief idea that we want to analyze the long run HPI and mortgage rate with real estate.
 Relationship between Hong Kong house prices and mortgage flows (RYC Tse, Journal of Property Finance, 1996 , 7 (4) :54-63)  indicates the price for housing units in Hong Kong is distorted by mortgage constraint, any changes house prices will have a feedback on mortgage lending, and thus tend to iron out the housing demand. 
 The data in Visually shows the mortgage rate and housing price in Canada. Home price in Toronto rose $5.4\%$ in 2013 and the mortgage rate fallen to historical lows $<3\%$. This data told us the negative relationship between HPI and Mortgage rate in Canada.
-However in US, one of the world biggest real estate trade market, the relationship of these two index may have a more remarkable result.So we decide to analyze HPI and mortgage rate in US during recent 30 years using ARMA, ARIMA and GRACH model.
+However, in the US, one of the world biggest real estate trade market, the relationship between this two index may have a more remarkable result.
+So we decide to analyze HPI and mortgage rate in the US during recent 30 years using ARMA, ARIMA and GRACH model.
 
 
 \section{Data source and data description}
 \subsection{Data source}
 The data we choose are US National Housing Price Index with a base of 100 in 1975 and 30-Year Conventional MortgageRate(DISCONTINUED). 
 We download the two data from the website ``FRED'' which is free. 
-Both of the two data are monthly recorded and not seasonly adjusted. 
+Both of the two data are monthly recorded and not seasonally adjusted. 
 We use monthly-based data mainly because two reason: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
 The time span of our sample data is during 1975.Jan. and 2016.Sep. which is the only period we could find that contains both the two types of data.
 
@@ -93,7 +95,7 @@ head(data)
 }
 
 \subsection{Data description}
-We download the data from FRED by excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
+We download the data from FRED by Excel form. One is about US National Housing Price Index and the other one is 30-Year Conventional MortgageRate(DISCONTINUED).
 We combine the excel into one in order to make the process of importing data more easily.Therefore, there are 501 rows and 5 columns contained in the final data excel.
 The 501 rows represent the 501 different months we contained in our sample, from 1975.Jan to 2016.Sep.
 The first column represents YEAR, the second is MONTH and the third is DATE.
@@ -115,11 +117,11 @@ summary(mort)
          
 \section{Model Specification}
 \subsection{Autoregressive model}
-An autoregressive (AR) model describes the time-varying processes of some specific variables, and it focus especially on the relationship among the localized data, always the data before time $t$. 
+An autoregressive (AR) model describes the time-varying processes of some specific variables, and it focuses especially on the relationship among the localized data, always the data before time $t$. 
 Intuitively speaking, given a time series data $ \{x_i\}$, for each $x_t$, we believe that $x_{t-1}$, $x_{t-2}$, $x_{t-3}$ $\dots$ have the predictive power that can somewhat explain main portion of $x_t$ as an linear combination.
-Also, AR model contains a white noise series, or a stochastic term that can be imperfectly predicted.
+Also, AR model contains a white noise series or a stochastic term that can be imperfectly predicted.
 And with the time variant assumption, $x_t$ has a statistically significant lag-n autocorrelation, the lagged value $x_{t-1}$ might be the most powerful explanatory variable.
-In the model specification, R program helps us with the order that has significant influence on our AR regression.
+In the model specification, R program helps us with the order that has the significant influence on our AR regression.
 
 {\footnotesize
 \begin{lstlisting}[language=R]
@@ -137,11 +139,11 @@ And AR(12) is used in our model:
 \end{equation}
 
 \subsection{Autoregressive Integrated Moving Average model}
-An autoregressive integrated moving average (ARIMA) model provide a parsimonious description of stochastic process. 
+An autoregressive integrated moving average (ARIMA) model provide a parsimonious description of the stochastic process. 
 The AR part is regressed on its own lagged, the (moving average) MA part is a linear combination of lagged error term occurring contemporaneously, the I part illustrates the difference of the value and their previous value. 
 One leading transmutation of ARIMA cut down the burdensome variables used in AR model and MA models, but it still adequate to simulate the data with dynamic structure in our analysis.
 With the spurn of high order model, some insignificant terms can be removed, the number of parameters used is sharply reduced, and the structure of the estimating model becomes parsimony.
-Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the inter-connection of housing price index.
+Also, as the model comprise three frames, these features should fit the data as well as possible, and we are expecting that the ARIMA model would afford a better interpretation for the interconnection of housing price index.
 
 {\footnotesize
 \begin{lstlisting}[language=R]
@@ -170,7 +172,7 @@ This time we are using the ARIMA(5,1,4):
 
 \subsection{General Autoregressive conditional heteroskedasticity model}
 First, if an autoregressive moving average model (ARMA) model is assumed for the error variance, the model is a generalized autoregressive conditional heteroscedasticity (GARCH) model.
-Second, if we look at the basic autoregressive conditional heteroskedasticity (ARCH) model, the variance of the current term is a function of the pervious time series' error term. 
+Second, if we look at the basic autoregressive conditional heteroskedasticity (ARCH) model, the variance of the current term is a function of the previous time series' error term. 
 The assumption of the time series data is serially uncorrelated but they are dependent, this time variant data is split into a stochastic piece which is a strong white noise and a time-dependent standard deviation.
 And in the GARCH ($p,q$) model, $p$ indicates the order of $\sigma^2$, $q$ indicates the order of the stochastic series.
 One thing needs to mention is that the model is highly relevant in volatility modeling, which means the GARCH model is the best method to test the volatility, for now.
@@ -179,13 +181,13 @@ The tail distribution of GARCH is heavier than normal, but it still provides a s
 
 \section{Empirical Results}
 In this section, we apply the proposed estimation method to the housing price index and mortgage rate to demonstrate its fitness. 
-In the empirical, we target at investigating following question. 
+In the empirical, we target at investigating the following question. 
 (1) How effective is the proposed method? 
-(2) How consilient does the representing formulation describe the data relaitonship? 
+(2) How consilient does the representing formulation describe the data relationship? 
 
 First, let's take a look at the inter-correlation within the housing price index. 
-The left picture of figure 1 provides a strong evidence for the trending of this time variant data, we can mainly predicate that this is an unit root process, and it is also stationary. 
-The right picture of figure 1 is the ACF after we have make one difference on the data, it is so clearly that the differenced data has seasonal adjusting, and about 12 months as a cycle.
+The left picture of figure 1 provides a strong evidence for the trending of this time variant data, we can mainly predicate that this is a unit root process, and it is also stationary. 
+The right picture of figure 1 is the ACF after we have made one difference on the data, it is so clearly that the differenced data has seasonal adjusting and about 12 months as a cycle.
 That makes sense to us because this 12 months' cycle reflects indirectly the varying of one year's preference for the housing. 
 
 \begin{figure*}[h!]
@@ -209,9 +211,10 @@ That makes sense to us because this 12 months' cycle reflects indirectly the var
 \vspace{-.25cm}
 \end{figure*}
 
-Then we have the sense that we can try the AR(12) model with being differentiate for once.
-From the code, we see 11 of the 12 coefficient is significant, and the aic is small, so we cannot deny that model is a good fit for our data.
-And the model is:
+Then we have the sense that we can try the AR(12) model with differentiating for once.
+From the code, we see 11 of the 12 coefficient is significant and the aic is small, so we cannot deny that model is a good fit for our data.
+We use the `tsdiag' command in the RStudio (see the results in the graph), and it gives much information so that we can have the AR(12) model as: 
+
  \begin{equation}
 \begin{aligned}
 (1-1.234B+0.283B^2+ \cdots + 0.233B^{12})x_t=a_t.
@@ -245,9 +248,9 @@ We also tried the MA(12) model, but unfortunately, this MA(12) model has $aic = 
 We do not think that it is a good model for predicting this housing price index dataset, and we do not give the representation of it here.
 
 After the AR and MA model, we think the combination of these two will also make sense, so we tried the ARIMA model.
-Before we do the simulation, we transform the data into a time series one by using the `ts' commend in RStudio.
-The `auto.arima' commend gives us the automatic simulation of these housing price index data on the ARIMA model, and it provides the ARIMA(5,0,4) for the data which has been differentiate for once.
-That is equivalent to the result that we would have a ARIMA(5,1,4) for the original data, the data without differentiate.
+Before we do the simulation, we transform the data into a time series one by using the `ts' command in RStudio.
+The `auto.arima' command gives us the automatic simulation of these housing price index data on the ARIMA model, and it provides the ARIMA(5,0,4) for the data which has been differentiating for once.
+That is equivalent to the result that we would have an ARIMA(5,1,4) for the original data, the data without differentiating.
 And the model is: 
 
 \begin{equation}
@@ -281,8 +284,8 @@ X-squared = 0.34351, df = 1, p-value = 0.5578
 \end{lstlisting}
 }
 
-We also have basic analysis of the mortgage rate, see Figure 2. 
-The ACF shows a strong serial correlations, and the PACF only significant on 1,2,3.
+We also have a basic analysis of the mortgage rate, see Figure 2. 
+The ACF shows a strong serial correlation, and the PACF only significant on 1,2,3.
 And we can conclude that the mortgage rate is almost a stationary data.
 
 \begin{figure*}[h!]
@@ -306,8 +309,8 @@ And we can conclude that the mortgage rate is almost a stationary data.
 \vspace{-.25cm}
 \end{figure*}
 
-Here comes the most focused part of our analysis on the relationship about the housing price index and mortgage rate. 
-By using the `plot' commend in RStudio, we have a intuitively negative relationship, see the following picture.
+Here comes the most focused part of our analysis on the relationship between the housing price index and mortgage rate. 
+By using the `plot' command in RStudio, we have an intuitively negative relationship, see the following picture.
 
 \begin{figure}[h!]
 \centering
@@ -315,7 +318,7 @@ By using the `plot' commend in RStudio, we have a intuitively negative relations
 \end{figure}
 
 And we are also wondering if we could just do it using a basic linear model. 
-We think it provides bad estimation because the t-test of both the intercept and coefficient is significant on $99\%$ confidence interval and the adjusted R-squared equals 0.603. 
+We think it provides bad estimation because the t-test of both the intercept and coefficient is significant at $99\%$ confidence interval and the adjusted R-squared equals 0.603. 
 And also because we see the steep change both in the mortgage rate in about 1980 and the housing price index in about 2008.
 But we here still give the function of this linear regression:
 
@@ -328,7 +331,7 @@ But we here still give the function of this linear regression:
 
 \section{Discussion of Linear Model}
 
-In our paper, the basic topic is the relationship between housing price index and the mortgage rate, so we will have more deeper discussion in this section.
+In our paper, the basic topic is the relationship between housing price index and the mortgage rate, so we will have a deeper discussion in this section.
 
 \subsection{Reasons for this Bad Estimation}
 As we have mentioned before, we do not think that the linear model is a good estimation to relate housing price index with the mortgage rate.
@@ -362,7 +365,7 @@ We use this information to further discuss the residuals in our linear regressio
 \vspace{-.25cm}
 \end{figure*}
 
-The residuals forms an AR(2) model with housing price index on the left side of the equation, while mortgage rate on the right.
+The residuals form an AR(2) model with housing price index on the left side of the equation, while mortgage rate on the right.
 The equation is: 
 
 \begin{equation}
@@ -388,17 +391,17 @@ sigma^2 estimated as 0.07448:  log likelihood = -61.54,  aic = 131.08
 But it's not a good explanation, the aic is big and the t-test is significant.\\
 
 Second, consider the information part. 
-All of us think this part makes more sense to the reason that the steep change in both dataset.
+All of us think this part makes more sense to the reason that the steep change in both datasets.
 The financial crisis in about 1980 and 2008 obviously make the change in the housing price index and the mortgage rate.
 
-But why the financial crisis in about 1980 have a such huge impact on the mortgage rate, but almost no change in housing price?
+But why the financial crisis in about 1980 have such huge impact on the mortgage rate, but almost no change in housing price?
 It has some issue rooted in history, like the baby boomers.
-Baby boomers in the United States, those born in the post-war generation over the 19 year period between 1946 and 1965, has becoming to the age of marriage.
-And that has signifiant increase in the demand of the house because we know that most of them moved out from their parents's house after marriage.
+Baby boomers in the United States, those born in the post-war generation over the 19 year period between 1946 and 1965, has become to the age of marriage.
+And that has the significant increase in the demand of the house because we know that most of them moved out from their parents' house after marriage.
 We do not know the most exactly why the housing price does not change that much, but we can guess that it is for some reality reasons.
 
 And if we look at the financial crisis in 2008, it provides enough information for the suddenly climb.
-In 2003, the federal funds rate is about 1.01$\%$, and after considering the inflation, it was actually a negative interest.
+In 2003, the federal fund rate is about 1.01$\%$, and after considering the inflation, it was actually a negative interest.
 This breaks the balance of the prudent savings and speculative risk, and it stimulates the opportunist in housing markets.
 That drives the housing price up in a very short period.
 We see the final results of this property bubble, it's the 2008 Financial Crisis.
@@ -409,7 +412,7 @@ And that makes our regression model more reasonable for it does not fit the data
 In this section, we talk about the variance in the dataset.
 To be specific, we are analysis the relationship between the $hpi_n-phi_{n-1}$and $mort_n-nort_{n-1}$.
 We are curious that the difference in the dataset will following which trend? 
-Will they has the positive relationship? 
+Will they have the positive relationship? 
 The code provides the answer: 
 
 \begin{equation}
@@ -432,9 +435,9 @@ x            0.27533    0.12558   2.193   0.0288 *
 \end{lstlisting}
 }
 
-Now we can conclude that, the t-test of coefficient is significant on $95\%$ confidence interval, and the intercept is signifiant on $99\%$ confidence interval.
-As we just did to the linear regression for non-differentiated term, we take a look at the linear residuals.
-The ACF provides the evidence that there exists a seasonal trend in the residuals, that may explains the model.
+Now we can conclude that the t-test of the coefficient is significant at $95\%$ confidence interval, and the intercept is significant on $99\%$ confidence interval.
+As we just did to the linear regression for the non-differentiated term, we take a look at the linear residuals.
+The ACF provides the evidence that there exists a seasonal trend in the residuals, that may explain the model.
 
 \begin{figure*}[h!]
 \begin{subfigure}[b]{0.4\textwidth}
