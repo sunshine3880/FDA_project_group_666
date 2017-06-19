@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Literature Review}{2}
+\contentsline {section}{\numberline {3}Data source and data description}{3}
+\contentsline {subsection}{\numberline {3.1}Data source}{3}
+\contentsline {subsection}{\numberline {3.2}Data description}{3}
+\contentsline {section}{\numberline {4}Model Specification}{4}
+\contentsline {subsection}{\numberline {4.1}Autoregressive model}{4}
+\contentsline {subsection}{\numberline {4.2}Autoregressive Integrated Moving Average model}{4}
+\contentsline {subsection}{\numberline {4.3}General Autoregressive conditional heteroskedasticity model}{5}
+\contentsline {section}{\numberline {5}Empirical Results}{5}
+\contentsline {section}{\numberline {6}Discussion of Linear Model}{7}
+\contentsline {subsection}{\numberline {6.1}Reasons for this Bad Estimation}{7}
+\contentsline {subsection}{\numberline {6.2}Trend of the Difference}{9}
+\contentsline {section}{\numberline {7}Conclusion}{9}
