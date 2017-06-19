@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.19)  30 MAY 2017 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.19)  19 JUN 2017 16:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -172,7 +172,17 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(./FDA_666.aux)
+(./FDA_666.aux
+
+LaTeX Warning: Label `fig:time' multiply defined.
+
+
+LaTeX Warning: Label `fig:time' multiply defined.
+
+
+LaTeX Warning: Label `fig:time' multiply defined.
+
+)
 \openout1 = `FDA_666.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -187,8 +197,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
-
-(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count108
 \scratchdimen=\dimen120
@@ -260,8 +269,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-No file FDA_666.toc.
+) (./FDA_666.toc)
 \tf@toc=\write3
 \openout3 = `FDA_666.toc'.
 
@@ -298,93 +306,59 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 83.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 85.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 83.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 85.
  [3] [4]
-Overfull \hbox (7.50533pt too wide) in paragraph at lines 171--171
+Overfull \hbox (7.50533pt too wide) in paragraph at lines 173--173
 []\OT1/cmr/bx/n/14.4 General Au-tore-gres-sive con-di-tional het-eroskedas-tic-
 ity model 
  []
 
 
-./FDA_666.tex:192: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:194: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.192 \begin{subfigure}
+l.194 \begin{subfigure}
                        [b]{0.4\textwidth}
-? 
-./FDA_666.tex:192: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.192 \begin{subfigure}[b]{0.4\textwidth}
-                                         
-? 
-./FDA_666.tex:192: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.192 \begin{subfigure}[b]{0.4\textwidth}
-                                         
-? 
-
-./FDA_666.tex:194: LaTeX Error: File `6' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.194  \includegraphics[scale=0.5]{6}
-                                     
-? 
-
-./FDA_666.tex:197: LaTeX Error: \begin{figure*} on input line 191 ended by \end
-{subfigure}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.197 \end{subfigure}
-                     
-? 
-
-./FDA_666.tex:200: LaTeX Error: Environment subfigure undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.200 \begin{subfigure}
-                       [b]{0.4\textwidth}
-? 
-./FDA_666.tex:200: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.200 \begin{subfigure}[b]{0.4\textwidth}
-                                         
-? 
-./FDA_666.tex:200: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.200 \begin{subfigure}[b]{0.4\textwidth}
-                                         
 ? s
 OK, entering \scrollmode...
+./FDA_666.tex:194: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.194 \begin{subfigure}[b]{0.4\textwidth}
+                                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:202: LaTeX Error: File `8' not found.
+./FDA_666.tex:194: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.194 \begin{subfigure}[b]{0.4\textwidth}
+                                         
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./FDA_666.tex:196: LaTeX Error: File `6' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.202  \includegraphics[scale=0.5]{8}
+l.196  \includegraphics[scale=0.5]{6}
                                      
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -392,14 +366,76 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:205: LaTeX Error: \begin{figure*} on input line 191 ended by \end
+./FDA_666.tex:199: LaTeX Error: \begin{figure*} on input line 193 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.205 \end{subfigure}
+l.199 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./FDA_666.tex:202: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.202 \begin{subfigure}
+                       [b]{0.4\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./FDA_666.tex:202: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.202 \begin{subfigure}[b]{0.4\textwidth}
+                                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./FDA_666.tex:202: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.202 \begin{subfigure}[b]{0.4\textwidth}
+                                         
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+./FDA_666.tex:204: LaTeX Error: File `8' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.204  \includegraphics[scale=0.5]{8}
+                                     
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./FDA_666.tex:207: LaTeX Error: \begin{figure*} on input line 193 ended by \end
+{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -409,48 +445,48 @@ or  <return>  to continue without it.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5]
-Overfull \hbox (1.31683pt too wide) in paragraph at lines 267--268
+Overfull \hbox (1.31683pt too wide) in paragraph at lines 270--271
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.31683pt too wide) in paragraph at lines 268--269
+Overfull \hbox (1.31683pt too wide) in paragraph at lines 271--272
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.31683pt too wide) in paragraph at lines 269--270
+Overfull \hbox (1.31683pt too wide) in paragraph at lines 272--273
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
  []
 
 [6]
 
-./FDA_666.tex:289: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:292: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.289 \begin{subfigure}
+l.292 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:289: Missing number, treated as zero.
+./FDA_666.tex:292: Missing number, treated as zero.
 <to be read again> 
                    }
-l.289 \begin{subfigure}[b]{0.4\textwidth}
+l.292 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:289: Illegal unit of measure (pt inserted).
+./FDA_666.tex:292: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.289 \begin{subfigure}[b]{0.4\textwidth}
+l.292 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -460,13 +496,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:291: LaTeX Error: File `4' not found.
+./FDA_666.tex:294: LaTeX Error: File `4' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.291  \includegraphics[scale=0.5]{4}
+l.294  \includegraphics[scale=0.5]{4}
                                      
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -474,45 +510,45 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:294: LaTeX Error: \begin{figure*} on input line 288 ended by \end
+./FDA_666.tex:297: LaTeX Error: \begin{figure*} on input line 291 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.294 \end{subfigure}
+l.297 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./FDA_666.tex:297: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:300: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.297 \begin{subfigure}
+l.300 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:297: Missing number, treated as zero.
+./FDA_666.tex:300: Missing number, treated as zero.
 <to be read again> 
                    }
-l.297 \begin{subfigure}[b]{0.4\textwidth}
+l.300 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:297: Illegal unit of measure (pt inserted).
+./FDA_666.tex:300: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.297 \begin{subfigure}[b]{0.4\textwidth}
+l.300 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -522,13 +558,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:299: LaTeX Error: File `9' not found.
+./FDA_666.tex:302: LaTeX Error: File `9' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.299  \includegraphics[scale=0.5]{9}
+l.302  \includegraphics[scale=0.5]{9}
                                      
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -536,27 +572,27 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:302: LaTeX Error: \begin{figure*} on input line 288 ended by \end
+./FDA_666.tex:305: LaTeX Error: \begin{figure*} on input line 291 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.302 \end{subfigure}
+l.305 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./FDA_666.tex:314: LaTeX Error: File `10' not found.
+./FDA_666.tex:317: LaTeX Error: File `10' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.314  \includegraphics[scale=.7]{10}
+l.317  \includegraphics[scale=.7]{10}
                                      \\
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -565,31 +601,31 @@ If that doesn't work, type  X <return>  to quit.
 
 [7]
 
-./FDA_666.tex:345: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:348: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.345 \begin{subfigure}
+l.348 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:345: Missing number, treated as zero.
+./FDA_666.tex:348: Missing number, treated as zero.
 <to be read again> 
                    }
-l.345 \begin{subfigure}[b]{0.4\textwidth}
+l.348 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:345: Illegal unit of measure (pt inserted).
+./FDA_666.tex:348: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.345 \begin{subfigure}[b]{0.4\textwidth}
+l.348 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -599,13 +635,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:347: LaTeX Error: File `12' not found.
+./FDA_666.tex:350: LaTeX Error: File `12' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.347  \includegraphics[scale=0.5]{12}
+l.350  \includegraphics[scale=0.5]{12}
                                       
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -613,45 +649,45 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:350: LaTeX Error: \begin{figure*} on input line 344 ended by \end
+./FDA_666.tex:353: LaTeX Error: \begin{figure*} on input line 347 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.350 \end{subfigure}
+l.353 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./FDA_666.tex:353: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:356: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.353 \begin{subfigure}
+l.356 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:353: Missing number, treated as zero.
+./FDA_666.tex:356: Missing number, treated as zero.
 <to be read again> 
                    }
-l.353 \begin{subfigure}[b]{0.4\textwidth}
+l.356 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:353: Illegal unit of measure (pt inserted).
+./FDA_666.tex:356: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.353 \begin{subfigure}[b]{0.4\textwidth}
+l.356 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -661,13 +697,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:355: LaTeX Error: File `11' not found.
+./FDA_666.tex:358: LaTeX Error: File `11' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.355  \includegraphics[scale=0.5]{11}
+l.358  \includegraphics[scale=0.5]{11}
                                       
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -675,59 +711,59 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:358: LaTeX Error: \begin{figure*} on input line 344 ended by \end
+./FDA_666.tex:361: LaTeX Error: \begin{figure*} on input line 347 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.358 \end{subfigure}
+l.361 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 429.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 432.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 429.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 432.
 
 
-./FDA_666.tex:440: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:443: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.440 \begin{subfigure}
+l.443 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:440: Missing number, treated as zero.
+./FDA_666.tex:443: Missing number, treated as zero.
 <to be read again> 
                    }
-l.440 \begin{subfigure}[b]{0.4\textwidth}
+l.443 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:440: Illegal unit of measure (pt inserted).
+./FDA_666.tex:443: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.440 \begin{subfigure}[b]{0.4\textwidth}
+l.443 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -737,13 +773,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:442: LaTeX Error: File `15' not found.
+./FDA_666.tex:445: LaTeX Error: File `15' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.442  \includegraphics[scale=0.5]{15}
+l.445  \includegraphics[scale=0.5]{15}
                                       
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -751,45 +787,45 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:445: LaTeX Error: \begin{figure*} on input line 439 ended by \end
+./FDA_666.tex:448: LaTeX Error: \begin{figure*} on input line 442 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.445 \end{subfigure}
+l.448 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./FDA_666.tex:448: LaTeX Error: Environment subfigure undefined.
+./FDA_666.tex:451: LaTeX Error: Environment subfigure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.448 \begin{subfigure}
+l.451 \begin{subfigure}
                        [b]{0.4\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./FDA_666.tex:448: Missing number, treated as zero.
+./FDA_666.tex:451: Missing number, treated as zero.
 <to be read again> 
                    }
-l.448 \begin{subfigure}[b]{0.4\textwidth}
+l.451 \begin{subfigure}[b]{0.4\textwidth}
                                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./FDA_666.tex:448: Illegal unit of measure (pt inserted).
+./FDA_666.tex:451: Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
-l.448 \begin{subfigure}[b]{0.4\textwidth}
+l.451 \begin{subfigure}[b]{0.4\textwidth}
                                          
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -799,13 +835,13 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-./FDA_666.tex:450: LaTeX Error: File `14' not found.
+./FDA_666.tex:453: LaTeX Error: File `14' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.450  \includegraphics[scale=0.5]{14}
+l.453  \includegraphics[scale=0.5]{14}
                                       
 I could not locate the file with any of these extensions:
 .png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -813,32 +849,35 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./FDA_666.tex:453: LaTeX Error: \begin{figure*} on input line 439 ended by \end
+./FDA_666.tex:456: LaTeX Error: \begin{figure*} on input line 442 ended by \end
 {subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.453 \end{subfigure}
+l.456 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[9] (./FDA_666.aux)
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+[9] [10] (./FDA_666.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5051 strings out of 493013
- 66093 string characters out of 6133342
- 205331 words of memory out of 5000000
- 8509 multiletter control sequences out of 15000+600000
- 13048 words of font info for 51 fonts, out of 8000000 for 9000
+ 5054 strings out of 493013
+ 66132 string characters out of 6133342
+ 202388 words of memory out of 5000000
+ 8510 multiletter control sequences out of 15000+600000
+ 13355 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,42p,535b,1927s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,7n,42p,533b,1927s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -849,10 +888,10 @@ ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on FDA_666.pdf (9 pages, 148819 bytes).
+Output written on FDA_666.pdf (10 pages, 151465 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
