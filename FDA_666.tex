@@ -26,6 +26,12 @@
 \newcommand{\blue}{\color{blue}}
 \newcommand{\red}{\color{red}}
 
+
+% My comments are  include through this structure
+\usepackage{marginnote}
+\newcommand{\mymarginnote}[2]{\marginnote{\parbox[t]{\marginparwidth}{\scriptsize \textcolor{#1}{#2}}}}
+
+
 \begin{document}
 
 \title{\textbf{\Large Financial Data Analysis}}
@@ -38,9 +44,6 @@
 
 \newpage
 \clearpage
-
-
-
 
 
 \section{Introduction}
@@ -78,6 +81,8 @@ We download the two data from the website ``FRED'' which is free.
 Both of the two data are monthly recorded and not seasonally adjusted. 
 We use monthly-based data mainly because two reason: the first one is that we want to make our sample big enough to assure the accuracy of our estimated results; the other one is that we  want to find the monthly characteristic of our data by ARIMA model and that is also why we choose the data which is not seasonal adjusted.
 The time span of our sample data is during 1975.Jan. and 2016.Sep. which is the only period we could find that contains both the two types of data.
+
+\mymarginnote{red}{This is your trick to include R code. It's OK. But I prefer you include the code in a Rmarkdown file or a Rnw file}
 
 {\footnotesize
 \begin{lstlisting}[language=R]
